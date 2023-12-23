@@ -1,0 +1,257 @@
+Using pre-set license
+Built from '2021.3/release' branch; Version is '2021.3.17f1 (3e8111cac19d) revision 4096273'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'en' Physical Memory: 16221 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Users/Medya/Documents/GitHub/VertigoDemoProject
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+61022
+Successfully changed project path to: C:/Users/Medya/Documents/GitHub/VertigoDemoProject
+C:/Users/Medya/Documents/GitHub/VertigoDemoProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [9932] Host "[IP] 25.12.106.12 [Port] 0 [Flags] 2 [Guid] 2856408689 [EditorId] 2856408689 [Version] 1048832 [Id] WindowsEditor(7,HiGames16) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [9932] Host "[IP] 25.12.106.12 [Port] 0 [Flags] 2 [Guid] 2856408689 [EditorId] 2856408689 [Version] 1048832 [Id] WindowsEditor(7,HiGames16) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 120.22 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.17f1 (3e8111cac19d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Medya/Documents/GitHub/VertigoDemoProject/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f99)
+    Vendor:   NVIDIA
+    VRAM:     3962 MB
+    Driver:   31.0.15.1700
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56176
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004722 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 77.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.589 seconds
+Domain Reload Profiling:
+	ReloadAssembly (589ms)
+		BeginReloadAssembly (64ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (418ms)
+			LoadAssemblies (62ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (96ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (244ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (78ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (114ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005027 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.303 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1304ms)
+		BeginReloadAssembly (106ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1095ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (288ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (613ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (481ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3377 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 27 unused Assets / (113.4 KB). Loaded Objects now: 3835.
+Memory consumption went from 115.7 MB to 115.5 MB.
+Total: 3.853400 ms (FindLiveObjects: 0.356900 ms CreateObjectMapping: 0.243900 ms MarkObjects: 3.168000 ms  DeleteObjects: 0.083700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 896202.019425 seconds.
+  path: Assets/Art/Sprites/UI_icon_chest_small_noligt.png
+  artifactKey: Guid(33dff52f99f7fd144bd1b2e95562e126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/UI_icon_chest_small_noligt.png using Guid(33dff52f99f7fd144bd1b2e95562e126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c4178de2ab27eb4b6d7af8185898a23') in 0.105544 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/Sprites/UI_icon_chest_super_nolight.png
+  artifactKey: Guid(01257364a512e434faaa14ee022be68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/UI_icon_chest_super_nolight.png using Guid(01257364a512e434faaa14ee022be68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '071c059d4526aeff70c54732b2b354e6') in 0.089304 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Art/Sprites/ui_spin_golden_base.png
+  artifactKey: Guid(1992e1726791dd1408b4b9c3069d4140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_spin_golden_base.png using Guid(1992e1726791dd1408b4b9c3069d4140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e91c3bc3bd3bcac60a1ed48596cb639') in 0.054773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Art/Sprites/UI_Icons_Pistol_Points.png
+  artifactKey: Guid(0a795a27e11f6834684302d059791b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/UI_Icons_Pistol_Points.png using Guid(0a795a27e11f6834684302d059791b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aefd6cd2bad851d76aadb6356b6c9988') in 0.028495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Sprites/UI_Icon_Renders_tier1_shotgun.png
+  artifactKey: Guid(ca27d8821c041644b9478882c1bc41f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/UI_Icon_Renders_tier1_shotgun.png using Guid(ca27d8821c041644b9478882c1bc41f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf2c387ee7015e5ea1772011779abba8') in 0.030233 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Art/Sprites/ui_spin_bronze_base.png
+  artifactKey: Guid(bafb4cc139789b64a9a7fe0c38875452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_spin_bronze_base.png using Guid(bafb4cc139789b64a9a7fe0c38875452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f66276bc24ca660b4839a1e866648e4') in 0.051799 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Sprites/ui_spin_bronze_indicator.png
+  artifactKey: Guid(205b9e2f943677e4f87ca2aaef9df7d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_spin_bronze_indicator.png using Guid(205b9e2f943677e4f87ca2aaef9df7d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081557b6c2425f31c6b3d690f1dca841') in 0.017213 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Art/Sprites/UI_Icons_Shotgun_Points.png
+  artifactKey: Guid(f3e017a276ed94440938fcc061f62785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/UI_Icons_Shotgun_Points.png using Guid(f3e017a276ed94440938fcc061f62785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d96fe6110b82bef8900257bd863c67') in 0.026277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Sprites/ui_spin_silver_base.png
+  artifactKey: Guid(1ae71d8cdee2e6f40b7b17d802c534d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_spin_silver_base.png using Guid(1ae71d8cdee2e6f40b7b17d802c534d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e8ba365fa0d2006980ac9178d03ff61') in 0.039598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.646560 seconds.
+  path: Assets/Art/Sprites/ui_card_panel_zone_super.png
+  artifactKey: Guid(f06bafae25fdb2045a05eff3769786b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_card_panel_zone_super.png using Guid(f06bafae25fdb2045a05eff3769786b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2a19e2e02db871034a82c19adb3a506') in 0.018922 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Sprites/UI_icon_cash.png
+  artifactKey: Guid(cc54737dfb5829942b610400b8a13643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/UI_icon_cash.png using Guid(cc54737dfb5829942b610400b8a13643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c3a99a63ef02e7f63e6e29b36af1a31') in 0.025437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Sprites/ui_icon_aviator_glasses_easter.png
+  artifactKey: Guid(7549e1797f0aeec429667de0ff3537fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_icon_aviator_glasses_easter.png using Guid(7549e1797f0aeec429667de0ff3537fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd2372becf11da2f523795d9b5ae1e70') in 0.035566 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.437442 seconds.
+  path: Assets/Art/Sprites/UI_button_grey_standard.png
+  artifactKey: Guid(6155206a4249ac048aed018f07c99921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/UI_button_grey_standard.png using Guid(6155206a4249ac048aed018f07c99921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43585a9fea589ddab8d7750d8af64b8f') in 0.027037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Sprites/ui_card_frame_12px_neutral.png
+  artifactKey: Guid(f1302bef69b44e143adafb626e1c97db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_card_frame_12px_neutral.png using Guid(f1302bef69b44e143adafb626e1c97db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62d57958fbe7b762388e293fb169f53a') in 0.019342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Art/Sprites/ui_card_frame_4px_zone.png
+  artifactKey: Guid(692204f53bec3e14686eb003131a62e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Sprites/ui_card_frame_4px_zone.png using Guid(692204f53bec3e14686eb003131a62e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '622fa379c83a8e7726feab5e8abb3223') in 0.022509 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
