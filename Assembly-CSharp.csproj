@@ -42,16 +42,33 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\SpinGameManager.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\SpinGamePanelManager.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\SpinWheel.cs" />
+     <Compile Include="Assets\Scripts\Data\SpinGameData.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\RewardCell.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneProgressBar.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\CollectedRewardInventory.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneCell.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\CollectedRewardCell.cs" />
+     <Compile Include="Assets\Scripts\Core\BaseMonoBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Core\BasePopUp.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\NextZoneInfo.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\ExitPopUp.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\BombExplodedPopUp.cs" />
+     <Compile Include="Assets\Scripts\Core\Singleton.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\Scripts\Data" />
+     <Folder Include="Assets\Scripts\SpinGamePanel" />
+     <Folder Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\Animations" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <Folder Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\Art\Sprites" />
@@ -59,7 +76,11 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\Art\Materials" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Scripts\Core" />
+     <Folder Include="Assets\Scripts\SpinGamePanel\PopUps" />
+     <Folder Include="Assets\Prefabs\UI" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <Folder Include="Assets\Prefabs\UI\SpinGamePanel" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
@@ -71,6 +92,7 @@
      <Folder Include="Assets\TextMesh Pro\Shaders" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
+     <Folder Include="Assets\Resources" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Prefabs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -79,7 +101,9 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Scenes" />
+     <Folder Include="Assets\Scripts\SpinGamePanel\SpinWheel" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <Folder Include="Assets\Data" />
      <Folder Include="Assets\TextMesh Pro\Documentation" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <Folder Include="Assets\Art" />
@@ -339,6 +363,9 @@
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTween">
+     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -739,6 +766,9 @@
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
@@ -784,11 +814,12 @@
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{c2f1a8fe-b4d4-595a-65a3-3ef50bfd2030}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
