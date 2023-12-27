@@ -7,12 +7,17 @@ using UnityEngine.UI;
 
 public class ExitPopUp : BasePopUp
 {
+    #region Event Field
+    
     public Action ClickedCollectRewardsButton;
     
+    #endregion // Event Field
+    
+    [Header("BUTTONS")]
     [SerializeField] private Button _collectRewardsButton;
     [SerializeField] private Button _goBackButton;
     
-    public override void Initialize()
+    public override void Initialize(params object[] list)
     {
         base.Initialize();
         

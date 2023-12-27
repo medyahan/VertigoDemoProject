@@ -16,90 +16,66 @@ MonoBehaviour:
   BronzeSpinWheelData:
     Type: 0
     HasBomb: 1
-    WheelSprite: {fileID: 21300000, guid: bafb4cc139789b64a9a7fe0c38875452, type: 3}
-    IndicatorSprite: {fileID: 21300000, guid: 205b9e2f943677e4f87ca2aaef9df7d9, type: 3}
+    WheelSpriteName: ui_spin_bronze_base
+    IndicatorSpriteName: ui_spin_bronze_indicator
     Rewards:
-    - Type: 1
-      Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 400
-    - Type: 1
-      Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 200
-    - Type: 2
-      Sprite: {fileID: 21300000, guid: ca27d8821c041644b9478882c1bc41f1, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 2
-    - Type: 3
-      Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 1000
-    - Type: 4
-      Sprite: {fileID: 21300000, guid: f72d56c69d30b5147b445a84e6771d88, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 3
-    - Type: 1
-      Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 50
-    - Type: 2
-      Sprite: {fileID: 21300000, guid: ca27d8821c041644b9478882c1bc41f1, type: 3}
-      Amount: 1
-    - Type: 3
-      Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
+      Amount: 201
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 300
   SilverSpinWheelData:
     Type: 1
     HasBomb: 0
-    WheelSprite: {fileID: 21300000, guid: 1ae71d8cdee2e6f40b7b17d802c534d3, type: 3}
-    IndicatorSprite: {fileID: 21300000, guid: 0e6e8495aac84c149baa5a18e992a94f, type: 3}
+    WheelSpriteName: ui_spin_silver_base
+    IndicatorSpriteName: ui_spin_silver_indicator
     Rewards:
-    - Type: 4
-      Sprite: {fileID: 21300000, guid: f72d56c69d30b5147b445a84e6771d88, type: 3}
-      Amount: 1
-    - Type: 1
-      Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
+      Amount: 400
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 200
-    - Type: 2
-      Sprite: {fileID: 21300000, guid: ca27d8821c041644b9478882c1bc41f1, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 2
-    - Type: 3
-      Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 1000
-    - Type: 4
-      Sprite: {fileID: 21300000, guid: f72d56c69d30b5147b445a84e6771d88, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 3
-    - Type: 1
-      Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 50
-    - Type: 2
-      Sprite: {fileID: 21300000, guid: ca27d8821c041644b9478882c1bc41f1, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 1
-    - Type: 3
-      Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 300
   GoldSpinWheelData:
     Type: 2
     HasBomb: 0
-    WheelSprite: {fileID: 21300000, guid: 1992e1726791dd1408b4b9c3069d4140, type: 3}
-    IndicatorSprite: {fileID: 21300000, guid: c0c3300b4f800ec43a99ea0fc4496f3b, type: 3}
+    WheelSpriteName: ui_spin_gold_base
+    IndicatorSpriteName: ui_spin_gold_indicator
     Rewards:
-    - Type: 4
-      Sprite: {fileID: 21300000, guid: f72d56c69d30b5147b445a84e6771d88, type: 3}
-      Amount: 1
-    - Type: 1
-      Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
+      Amount: 400
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 200
-    - Type: 2
-      Sprite: {fileID: 21300000, guid: ca27d8821c041644b9478882c1bc41f1, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 2
-    - Type: 3
-      Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 1000
-    - Type: 4
-      Sprite: {fileID: 21300000, guid: f72d56c69d30b5147b445a84e6771d88, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 3
-    - Type: 1
-      Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 50
-    - Type: 2
-      Sprite: {fileID: 21300000, guid: ca27d8821c041644b9478882c1bc41f1, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 1
-    - Type: 3
-      Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
+    - SpriteName: UI_Icon_Renders_tier1_shotgun
       Amount: 300

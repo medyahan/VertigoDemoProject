@@ -6,6 +6,8 @@ namespace SpinGamePanel.ZoneProgressBar
 {
     public class ZoneCell : BaseMonoBehaviour
     {
+        #region Variable Field
+        
         [Header("CELL COMPONENTS")]
         [SerializeField] private TMP_Text _zoneText;
         [SerializeField] private CanvasGroup _canvasGroup;
@@ -15,7 +17,12 @@ namespace SpinGamePanel.ZoneProgressBar
         [SerializeField] private Color _safeZoneColor;
         [SerializeField] private Color _superZoneColor;
 
+        [Header("VALUES")] 
+        [SerializeField] private float _inactivateAlphaValue;
+
         private int _zoneIndex;
+        
+        #endregion // Variable Field
     
         public override void Initialize(params object[] list)
         {
@@ -23,9 +30,14 @@ namespace SpinGamePanel.ZoneProgressBar
 
             _zoneIndex = (int)list[0];
 
+            Prepare();
+        }
+
+        private void Prepare()
+        {
             _zoneText.text = _zoneIndex.ToString();
 
-            //burası düzenlecek
+            //TODO düzelt
             if (_zoneIndex % 30 == 0)
             {
                 _zoneText.color = _superZoneColor;
@@ -40,9 +52,9 @@ namespace SpinGamePanel.ZoneProgressBar
             }
         }
 
-        public void Inactive()
+        public void Inactivate()
         {
-            _canvasGroup.alpha = .2f;
+            _canvasGroup.alpha = _inactivateAlphaValue;
         }
     }
 }

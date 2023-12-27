@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpinGameData : ScriptableObject
 {
     public Sprite BombSprite;
+    
+    [Header("SPIN WHEEL DATA")]
     public SpinWheelData BronzeSpinWheelData;
     public SpinWheelData SilverSpinWheelData;
     public SpinWheelData GoldSpinWheelData;
@@ -44,32 +46,23 @@ public class SpinGameData : ScriptableObject
     {
         public ZoneType Type;
         public bool HasBomb;
-        public Sprite WheelSprite;
-        public Sprite IndicatorSprite;
+        public string WheelSpriteName;
+        public string IndicatorSpriteName;
         public RewardData[] Rewards;
-
-        public RewardData[] GetRandomRewardList(int rewardCount)
-        {
-            // düzelt
-            return Rewards;
-        }
     }
 
     [Serializable]
     public class RewardData
     {
-        public RewardType Type;
-        public Sprite Sprite;
+        public string SpriteName;
         public int Amount;
-    }
 
-    public enum SpinType
-    {
-        Bronze,
-        Silver,
-        Gold
+        // public Sprite GetSprite()
+        // {
+        //     
+        // }
     }
-
+    
     public enum ZoneType
     {
         DefaultZone,

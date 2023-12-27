@@ -7,13 +7,18 @@ using UnityEngine.UI;
 
 public class BombExplodedPopUp : BasePopUp
 {
+    #region Event Field
+    
     public Action ClickedReviveButton;
     public Action ClickedGiveUpButton;
     
+    #endregion // Event Field
+    
+    [Header("BUTTONS")]
     [SerializeField] private Button _giveUpButton;
     [SerializeField] private Button _reviveButton;
 
-    public override void Initialize()
+    public override void Initialize(params object[] list)
     {
         base.Initialize();
         

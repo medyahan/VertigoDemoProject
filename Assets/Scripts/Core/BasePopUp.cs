@@ -8,9 +8,9 @@ public class BasePopUp : MonoBehaviour
     [SerializeField] protected float _openAnimateDuration = .7f;
     [SerializeField] protected float _closeAnimateDuration = .7f;
 
-    public virtual void Initialize()
+    public virtual void Initialize(params object[] list)
     {
-
+        Open();
     }
 
     public virtual void Open()

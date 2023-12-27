@@ -41,21 +41,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\SpinGamePanelManager.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\SpinWheel.cs" />
-     <Compile Include="Assets\Scripts\Data\SpinGameData.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\RewardCell.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneProgressBar.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\CollectedRewardInventory.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneCell.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\CollectedRewardCell.cs" />
-     <Compile Include="Assets\Scripts\Core\BaseMonoBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Core\BasePopUp.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\NextZoneInfo.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\ExitPopUp.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\BombExplodedPopUp.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\NextZoneInfo\NextZoneInfoController.cs" />
      <Compile Include="Assets\Scripts\Core\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Core\BasePopUp.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\ExitPopUp.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\RewardCell.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\RewardInventoryCell.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\RewardInventoryController.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneProgressBarController.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\BombExplodedPopUp.cs" />
+     <Compile Include="Assets\Scripts\Data\SpinGameData.cs" />
+     <Compile Include="Assets\Scripts\Core\BaseMonoBehaviour.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\SpinWheelController.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneCell.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\SpinGamePanelManager.cs" />
+     <Compile Include="Assets\Scripts\MainMenuPanel\MainMenuPanelManager.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\CollectedRewardsPopUp.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -68,18 +70,26 @@
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\Animations" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <Folder Include="Assets\Art\Sprites\Backgrounds" />
      <Folder Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\Scripts\SpinGamePanel\NextZoneInfo" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\Art\Sprites" />
-     <Folder Include="Assets\Art\Models" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <Folder Include="Assets\Art\Materials" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Animations\UI\SpinGamePanel\Animators" />
+     <Folder Include="Assets\Art\Sprites\SpinWheels" />
      <Folder Include="Assets\Scripts\Core" />
+     <Folder Include="Assets\Animations\UI\SpinGamePanel" />
+     <Folder Include="Assets\Art\Sprites\Icons\HealthShots" />
      <Folder Include="Assets\Scripts\SpinGamePanel\PopUps" />
      <Folder Include="Assets\Prefabs\UI" />
+     <Folder Include="Assets\Art\Sprites\Icons\Knifes" />
+     <Folder Include="Assets\Art\Sprites\Icons\Outfits" />
+     <Folder Include="Assets\Art\Sprites\Icons" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <Folder Include="Assets\Art\Sprites\Icons\Grenades" />
      <Folder Include="Assets\Prefabs\UI\SpinGamePanel" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -93,18 +103,22 @@
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\Art\Sprites\Icons\Weapons" />
+     <Folder Include="Assets\Art\Sprites\Icons\Chests" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Prefabs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <Folder Include="Assets\Art\Textures" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Scripts\MainMenuPanel" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <Folder Include="Assets\Art\Sprites\Icons\Points" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Scripts\SpinGamePanel\SpinWheel" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <Folder Include="Assets\Data" />
      <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <Folder Include="Assets\Art\Sprites\Generic" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <Folder Include="Assets\Art" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
@@ -355,6 +369,9 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
+     <Reference Include="DOTween">
+     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
@@ -363,9 +380,6 @@
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
-     <Reference Include="DOTween">
-     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

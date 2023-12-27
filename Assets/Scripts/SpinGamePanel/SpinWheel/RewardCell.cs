@@ -20,12 +20,12 @@ namespace SpinGamePanel.SpinWheel
         private bool _isBomb;
         public bool IsBomb => _isBomb;
 
-        public void SetData(RewardData rewardDataData)
+        public void SetData(RewardData rewardDataData, Sprite sprite)
         {
             _isBomb = false;
             _rewardData = rewardDataData;
 
-            _rewardImage.sprite = _rewardData.Sprite;
+            _rewardImage.sprite = sprite;
             _amountText.text = "x" + _rewardData.Amount;
         }
 
