@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6902337534271311440}
   - component: {fileID: 6902337534271311447}
   m_Layer: 5
-  m_Name: AmountText
+  m_Name: ui_text_amount_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rewardImage: {fileID: 6902337534944011465}
   _amountText: {fileID: 6902337534271311447}
+  _addingAmountAnimateDuration: 0.3
 --- !u!1 &6902337534944011471
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +210,7 @@ GameObject:
   - component: {fileID: 6902337534944011466}
   - component: {fileID: 6902337534944011465}
   m_Layer: 5
-  m_Name: RewardIcon
+  m_Name: ui_image_reward_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

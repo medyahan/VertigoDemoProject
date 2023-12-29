@@ -19,13 +19,7 @@ namespace SpinGamePanel.ZoneProgressBar
         [SerializeField] private Transform _contentParent;
 
         [Header("ZONE INDICATOR")]
-        [SerializeField] private Image _zoneIndicatorImage;
-        [SerializeField] private TMP_Text _zoneIndicatorText;
-
-        [Header("ZONE INDICATOR SPRITES")]
-        [SerializeField] private Sprite _defaultZoneSprite;
-        [SerializeField] private Sprite _safeZoneSprite;
-        [SerializeField] private Sprite _superZoneSprite;
+        [SerializeField] private ZoneIndicator _zoneIndicator;
 
         [Header("VALUES")] 
         [SerializeField] private float _scrollAnimateDuration;
@@ -46,7 +40,7 @@ namespace SpinGamePanel.ZoneProgressBar
             
             CreateZoneCells();
         
-            UpdateZoneIndicator(1, ZoneType.DefaultZone); //TODO Düzelt
+            _zoneIndicator.UpdateZoneIndicatorUI(1);
         }
 
         public override void End()
@@ -66,22 +60,32 @@ namespace SpinGamePanel.ZoneProgressBar
             _zoneCellList.Clear();
         }
 
+        /// <summary>
+        /// Instantiates and initializes ZoneCell prefabs for each game zone, adding them to the zone cell list.
+        /// </summary>
         private void CreateZoneCells()
         {
             for (int i = 0; i < _totalZoneCount; i++)
             {
                 ZoneCell zoneCell = Instantiate(_zoneCellPrefab, _contentParent);
-            
-                zoneCell.Initialize(i+1);
+
+                zoneCell.Initialize(i + 1);
             
                 _zoneCellList.Add(zoneCell);
             }
         }
 
-        public void OnChangeCurrentZoneIndex(int currentZoneIndex, ZoneType currentZoneType)
+        /// <summary>
+        /// Handles the change in the current game zone index and type. Inactivates the previous zone cell,
+        /// animates the scroll content to the next zone, and updates the zone indicator.
+        /// </summary>
+        /// <param name="currentZoneIndex">The index of the current game zone.</param>
+        /// <param name="currentZoneType">The type of the current game zone.</param>
+
+        public void OnChangeCurrentZoneIndex(int currentZoneIndex)
         {
             // Inactivate previous zone cell
-            _zoneCellList[currentZoneIndex - 1].Inactivate();
+            _zoneCellList[currentZoneIndex - 2].Inactivate();
             
             // Animate scroll content for the next zone
             Vector3 newContentPosition = _contentParent.localPosition;
@@ -89,26 +93,8 @@ namespace SpinGamePanel.ZoneProgressBar
             
             _contentParent.DOLocalMove(newContentPosition, _scrollAnimateDuration).OnComplete(() =>
             {
-                UpdateZoneIndicator(currentZoneIndex, currentZoneType);
+                _zoneIndicator.UpdateZoneIndicatorUI(currentZoneIndex);
             });
-        }
-
-        private void UpdateZoneIndicator(int currentZoneIndex, ZoneType currentZoneType)
-        {
-            _zoneIndicatorText.text = currentZoneIndex.ToString();
-
-            switch (currentZoneType)
-            {
-                case ZoneType.DefaultZone:
-                    _zoneIndicatorImage.sprite = _defaultZoneSprite;
-                    break;
-                case ZoneType.SafeZone:
-                    _zoneIndicatorImage.sprite = _safeZoneSprite;
-                    break;
-                default:
-                    _zoneIndicatorImage.sprite = _superZoneSprite;
-                    break;
-            }
         }
     }
 }

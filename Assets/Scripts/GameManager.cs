@@ -8,7 +8,22 @@ public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private SpinGamePanelManager _spinGamePanelManager;
     [SerializeField] private MainMenuPanelManager _mainMenuPanelManager;
+
+    [SerializeField] private int _defaultGoldCurrency;
+    [SerializeField] private int _defaultCashCurrency;
+
+    public int GoldCurrency
+    {
+        get => PlayerPrefs.GetInt("Gold", _defaultGoldCurrency);
+        set => PlayerPrefs.SetInt("Gold", value);
+    }
     
+    public int CashCurrency
+    {
+        get => PlayerPrefs.GetInt("Cash", _defaultCashCurrency);
+        set => PlayerPrefs.SetInt("Cash", value);
+    }
+
     private void Start()
     {
         _mainMenuPanelManager.Initialize();

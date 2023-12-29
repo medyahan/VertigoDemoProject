@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,18 +16,38 @@ public class BombExplodedPopUp : BasePopUp
     #endregion // Event Field
     
     [Header("BUTTONS")]
-    [SerializeField] private Button _giveUpButton;
-    [SerializeField] private Button _reviveButton;
+    [SerializeField] private GameObject _giveUpButtonObj;
+    [SerializeField] private GameObject _reviveButtonObj;
+
+    [Header("TEXTS")] 
+    [SerializeField] private TMP_Text _reviveCurrencyValueText;
+    
+    private BaseButton _giveUpButton;
+    private BaseButton _reviveButton;
+
+    private int _reviveCurrencyValue;
+    
+    private void OnValidate()
+    {
+        if (_giveUpButton != null)
+            _giveUpButton.OnClick = null;
+        
+        if (_reviveButton != null)
+            _reviveButton.OnClick = null;
+            
+        _giveUpButton = _giveUpButtonObj.GetComponent<BaseButton>();
+        _giveUpButton.OnClick += OnClickGiveUpButton;
+        
+        _reviveButton = _reviveButtonObj.GetComponent<BaseButton>();
+        _reviveButton.OnClick += OnClickReviveButton;
+    }
 
     public override void Initialize(params object[] list)
     {
         base.Initialize();
-        
-        _giveUpButton.onClick.RemoveAllListeners();
-        _giveUpButton.onClick.AddListener(OnClickGiveUpButton);
-        
-        _reviveButton.onClick.RemoveAllListeners();
-        _reviveButton.onClick.AddListener(OnClickReviveButton);
+
+        _reviveCurrencyValue = (int) list[0];
+        _reviveCurrencyValueText.text = _reviveCurrencyValue.ToString();
     }
     
     public override void Open()
@@ -47,7 +68,9 @@ public class BombExplodedPopUp : BasePopUp
             
         });
     }
-    
+
+    #region BUTTON LISTENERS
+
     private void OnClickGiveUpButton()
     {
         Close();
@@ -59,4 +82,6 @@ public class BombExplodedPopUp : BasePopUp
         Close();
         ClickedReviveButton?.Invoke();
     }
+
+    #endregion
 }

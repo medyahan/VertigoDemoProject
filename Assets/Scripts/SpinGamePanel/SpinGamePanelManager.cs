@@ -1,29 +1,37 @@
 using Core;
+using SpinGamePanel.RewardInventory;
+using SpinGamePanel.SpinWheel;
+using SpinGamePanel.ZoneProgressBar;
 using UnityEngine;
-using ZoneType = SpinGameData.ZoneType;
 using RewardData = SpinGameData.RewardData;
 
 namespace SpinGamePanel
 {
     public class SpinGamePanelManager : BaseMonoBehaviour
     {
+        #region Variable Field
+        
         [SerializeField] private SpinGameData _spinGameData;
 
         [SerializeField] private GameObject _gamePanel;
 
-        [SerializeField] private SpinWheel.SpinWheelController _spinWheelController;
-        [SerializeField] private CollectedRewardInventory.RewardInventoryController _rewardInventoryController;
-        [SerializeField] private ZoneProgressBar.ZoneProgressBarController _zoneProgressBarController;
+        [Header("CONTROLLERS")] 
+        [SerializeField] private CurrencyController _currencyController;
+        [SerializeField] private SpinWheelController _spinWheelController;
+        [SerializeField] private RewardInventoryController _rewardInventoryController;
+        [SerializeField] private ZoneProgressBarController _zoneProgressBarController;
         [SerializeField] private NextZoneInfoController _nextZoneInfoController;
 
-        [Header("Pop Up")] 
+        [Header("POP UPS")] 
         [SerializeField] private BombExplodedPopUp _bombExplodedPopUp;
         [SerializeField] private ExitPopUp _exitPopUp;
         [SerializeField] private CollectedRewardsPopUp _collectedRewardsPopUp;
 
         [SerializeField] private int _totalZoneCount;
+        
         private int _currentZoneIndex = 1;
 
+        #endregion //Variable Field
         public override void Initialize(params object[] list)
         {
             base.Initialize(list);
@@ -31,19 +39,22 @@ namespace SpinGamePanel
             _currentZoneIndex = 1;
             _gamePanel.SetActive(true);
             
+            _currencyController.Initialize();
             _spinWheelController.Initialize(_currentZoneIndex, _spinGameData);
             _rewardInventoryController.Initialize();
             _zoneProgressBarController.Initialize(_totalZoneCount);
-            _nextZoneInfoController.Initialize(_totalZoneCount);
+            _nextZoneInfoController.Initialize(_totalZoneCount, _spinGameData.EverySafeZoneFactor, _spinGameData.EverySuperZoneFactor);
         }
 
         public override void RegisterEvents()
         {
-            _spinWheelController.RewardCollected += OnCollectedReward;
-            _spinWheelController.BombExploded += OnBombExploded;
-            _rewardInventoryController.ClickedExitButton += OnClickExitButton;
-            _rewardInventoryController.GetIsWheelSpinning += _spinWheelController.GetIsWheelSpinning;
-
+            SpinGameEventLib.Instance.RewardCollected += OnCollectedReward;
+            SpinGameEventLib.Instance.BombExploded += OnBombExploded;
+            SpinGameEventLib.Instance.ClickedExitButton += OnClickExitButton;
+            SpinGameEventLib.Instance.GetIsWheelSpinning += _spinWheelController.GetIsWheelSpinning;
+            SpinGameEventLib.Instance.GetZoneTypeOfZoneIndex += _spinGameData.GetZoneTypeOfZoneIndex;
+            SpinGameEventLib.Instance.GetAllRewardInInventory += _rewardInventoryController.GetAllRewardDataInInventory;
+            
             _bombExplodedPopUp.ClickedReviveButton += OnClickedReviveButton;
             _bombExplodedPopUp.ClickedGiveUpButton += OnClickedGiveUpButton;
             _exitPopUp.ClickedCollectRewardsButton += OnClickedCollectRewardsButton;
@@ -52,11 +63,13 @@ namespace SpinGamePanel
 
         public override void UnregisterEvents()
         {
-            _spinWheelController.RewardCollected -= OnCollectedReward;
-            _spinWheelController.BombExploded -= OnBombExploded;
-            _rewardInventoryController.ClickedExitButton -= OnClickExitButton;
-            _rewardInventoryController.GetIsWheelSpinning -= _spinWheelController.GetIsWheelSpinning;
-            
+            SpinGameEventLib.Instance.RewardCollected -= OnCollectedReward;
+            SpinGameEventLib.Instance.BombExploded -= OnBombExploded;
+            SpinGameEventLib.Instance.ClickedExitButton -= OnClickExitButton;
+            SpinGameEventLib.Instance.GetIsWheelSpinning -= _spinWheelController.GetIsWheelSpinning;
+            SpinGameEventLib.Instance.GetZoneTypeOfZoneIndex -= _spinGameData.GetZoneTypeOfZoneIndex;
+            SpinGameEventLib.Instance.GetAllRewardInInventory -= _rewardInventoryController.GetAllRewardDataInInventory;
+
             _bombExplodedPopUp.ClickedReviveButton -= OnClickedReviveButton;
             _bombExplodedPopUp.ClickedGiveUpButton -= OnClickedGiveUpButton;
             _exitPopUp.ClickedCollectRewardsButton -= OnClickedCollectRewardsButton;
@@ -73,10 +86,15 @@ namespace SpinGamePanel
             _nextZoneInfoController.End();
         }
         
+        /// <summary>
+        /// Increases the current game zone index and checks if it exceeds the total zone count.
+        /// If the current index surpasses the total count, stops the spinning game through the GameManager.
+        /// </summary>
         private void IncreaseCurrentZoneIndex()
         {
             _currentZoneIndex++;
 
+            // Check if the current index exceeds the total zone count.
             if (_currentZoneIndex > _totalZoneCount)
             {
                 // ödülleri al ve oyunu bitir
@@ -86,20 +104,26 @@ namespace SpinGamePanel
 
         #region LISTENERS
         
+        /// <summary>
+        /// Handles the event triggered when a reward is collected. Adds the collected reward to the inventory,
+        /// advances the current zone index, and updates various UI elements related to the current game zone.
+        /// </summary>
+        /// <param name="collectedRewardData">Data associated with the collected reward.</param>
         private void OnCollectedReward(RewardData collectedRewardData)
         {
             _rewardInventoryController.AddRewardToInventory(collectedRewardData);
 
             IncreaseCurrentZoneIndex();
             
-            _zoneProgressBarController.OnChangeCurrentZoneIndex(_currentZoneIndex, _spinGameData.GetZoneTypeOfZoneIndex(_currentZoneIndex));
+            // Update UI elements to reflect the changes in the current game zone.
+            _zoneProgressBarController.OnChangeCurrentZoneIndex(_currentZoneIndex);
             _spinWheelController.UpdateWheelByZoneIndex(_currentZoneIndex);
             _nextZoneInfoController.OnChangeCurrentZoneIndex(_currentZoneIndex);
         }
         
         private void OnBombExploded()
         {
-            _bombExplodedPopUp.Initialize();
+            _bombExplodedPopUp.Initialize(_spinGameData.ReviveCurrencyValue);
         }
         
         private void OnClickExitButton()
@@ -109,27 +133,25 @@ namespace SpinGamePanel
         
         private void OnClickedReviveButton()
         {
-            // Para eksiltme işlemleri
-            // Oyun devam eder
+            _currencyController.UpdateGoldCurrency(-_spinGameData.ReviveCurrencyValue);
             
             IncreaseCurrentZoneIndex();
             
-            _zoneProgressBarController.OnChangeCurrentZoneIndex(_currentZoneIndex, _spinGameData.GetZoneTypeOfZoneIndex(_currentZoneIndex));
+            // Update UI elements to reflect the changes in the current game zone.
+            _zoneProgressBarController.OnChangeCurrentZoneIndex(_currentZoneIndex);
             _spinWheelController.UpdateWheelByZoneIndex(_currentZoneIndex);
             _nextZoneInfoController.OnChangeCurrentZoneIndex(_currentZoneIndex);
         }
         
         private void OnClickedGiveUpButton()
         {
-            // Oyun resetlenir
             GameManager.Instance.StopSpinGame();
         }
         
         private void OnClickedCollectRewardsButton()
         {
-            // Oyuncu ödülleri gönder
             _gamePanel.SetActive(false);
-            _collectedRewardsPopUp.Initialize(); //TODO ödülleri gönder
+            _collectedRewardsPopUp.Initialize();
         }
         
         private void OnClickedClaimButton()

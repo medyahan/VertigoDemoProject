@@ -1,6 +1,7 @@
 using Core;
 using TMPro;
 using UnityEngine;
+using ZoneType = SpinGameData.ZoneType;
 
 namespace SpinGamePanel.ZoneProgressBar
 {
@@ -21,6 +22,7 @@ namespace SpinGamePanel.ZoneProgressBar
         [SerializeField] private float _inactivateAlphaValue;
 
         private int _zoneIndex;
+        private SpinGameData.ZoneType _zoneType;
         
         #endregion // Variable Field
     
@@ -29,20 +31,24 @@ namespace SpinGamePanel.ZoneProgressBar
             base.Initialize(list);
 
             _zoneIndex = (int)list[0];
+            _zoneType = SpinGameEventLib.Instance.GetZoneTypeOfZoneIndex(_zoneIndex);
 
-            Prepare();
+            PrepareUI();
         }
 
-        private void Prepare()
+        /// <summary>
+        /// Prepares the UI elements for the current zone, updating the zone text and color based on the current zone index and type.
+        /// </summary>
+        private void PrepareUI()
         {
             _zoneText.text = _zoneIndex.ToString();
 
-            //TODO düzelt
-            if (_zoneIndex % 30 == 0)
+            // Determine the color of the zone text based on the current zone type.
+            if (_zoneType == ZoneType.SuperZone)
             {
                 _zoneText.color = _superZoneColor;
             }
-            else if(_zoneIndex % 5 == 0)
+            else if(_zoneType == ZoneType.SafeZone)
             {
                 _zoneText.color = _safeZoneColor;
             }

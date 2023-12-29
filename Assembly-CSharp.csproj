@@ -44,22 +44,29 @@
      <Compile Include="Assets\Scripts\SpinGamePanel\NextZoneInfo\NextZoneInfoController.cs" />
      <Compile Include="Assets\Scripts\Core\Singleton.cs" />
      <Compile Include="Assets\Scripts\Core\BasePopUp.cs" />
+     <Compile Include="Assets\Scripts\MainMenuPanel\MainMenuPanelManager.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\ExitPopUp.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\RewardCell.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\RewardInventoryCell.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory\RewardInventoryController.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\RewardInventory\RewardInventoryCell.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\RewardInventory\RewardInventoryController.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneProgressBarController.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\BombExplodedPopUp.cs" />
      <Compile Include="Assets\Scripts\Data\SpinGameData.cs" />
      <Compile Include="Assets\Scripts\Core\BaseMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\SpinWheelController.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\CollectedRewardsPopUp.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneCell.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\SpinGamePanelManager.cs" />
-     <Compile Include="Assets\Scripts\MainMenuPanel\MainMenuPanelManager.cs" />
-     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\CollectedRewardsPopUp.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\Card\RewardCard.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\SpinGameEventLib.cs" />
+     <Compile Include="Assets\Scripts\Core\BaseButton.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneIndicator.cs" />
+     <Compile Include="Assets\Scripts\Data\SpinWheelData.cs" />
+     <Compile Include="Assets\Scripts\Common\CurrencyController.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <Folder Include="Assets\Scripts\SpinGamePanel\Card" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
@@ -71,15 +78,16 @@
      <Folder Include="Assets\Animations" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <Folder Include="Assets\Art\Sprites\Backgrounds" />
-     <Folder Include="Assets\Scripts\SpinGamePanel\CollectedRewardInventory" />
+     <Folder Include="Assets\Scripts\SpinGamePanel\RewardInventory" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\Scripts\SpinGamePanel\NextZoneInfo" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
+     <Folder Include="Assets\Art\SpriteAtlas" />
      <Folder Include="Assets\Art\Sprites" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Animations\UI\SpinGamePanel\Animators" />
-     <Folder Include="Assets\Art\Sprites\SpinWheels" />
+     <Folder Include="Assets\Art\Sprites\SpinGamePanel" />
      <Folder Include="Assets\Scripts\Core" />
      <Folder Include="Assets\Animations\UI\SpinGamePanel" />
      <Folder Include="Assets\Art\Sprites\Icons\HealthShots" />
@@ -98,8 +106,10 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <Folder Include="Assets\Animations\UI" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <Folder Include="Assets\Data\SpinGame" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\Data\SpinGame\SpinWheel" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\Resources" />
@@ -111,6 +121,7 @@
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\MainMenuPanel" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <Folder Include="Assets\Scripts\Common" />
      <Folder Include="Assets\Art\Sprites\Icons\Points" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Scenes" />
@@ -380,6 +391,12 @@
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Types">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Gradle">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

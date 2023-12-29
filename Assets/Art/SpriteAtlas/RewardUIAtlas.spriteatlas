@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RewardIconAtlas
+  m_Name: RewardUIAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -136,5 +136,5 @@ SpriteAtlas:
   - UI_Icons_Sniper_Points
   - UI_icon_chest_big_nolight
   m_RenderDataMap: {}
-  m_Tag: RewardIconAtlas
+  m_Tag: RewardUIAtlas
   m_IsVariant: 0

@@ -1,39 +1,26 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SpinGameData", menuName = "Data/SpinGameData")]
+[CreateAssetMenu(fileName = "SpinGameData", menuName = "Data/SpinGame/SpinGameData")]
 public class SpinGameData : ScriptableObject
 {
     public Sprite BombSprite;
     
-    [Header("SPIN WHEEL DATA")]
-    public SpinWheelData BronzeSpinWheelData;
-    public SpinWheelData SilverSpinWheelData;
-    public SpinWheelData GoldSpinWheelData;
+    [Header("ZONE FACTOR VALUES")]
+    public int EverySafeZoneFactor;
+    public int EverySuperZoneFactor;
 
-    public SpinWheelData GetSpinWheelDataByZoneIndex(int zoneIndex)
-    {
-        ZoneType zoneType = GetZoneTypeOfZoneIndex(zoneIndex);
-        
-        switch (zoneType)
-        {
-            case ZoneType.DefaultZone:
-                return BronzeSpinWheelData;
-            case ZoneType.SafeZone:
-                return SilverSpinWheelData;
-            default:
-                return GoldSpinWheelData;
-        }
-    }
+    [Header("ZONE FACTOR VALUES")] 
+    public int ReviveCurrencyValue;
 
     public ZoneType GetZoneTypeOfZoneIndex(int zoneIndex)
     {
-        if (zoneIndex % 30 == 0)
+        if (zoneIndex % EverySuperZoneFactor == 0)
         {
             return ZoneType.SuperZone;
         }
 
-        if (zoneIndex % 5 == 0)
+        if (zoneIndex % EverySafeZoneFactor == 0)
         {
             return ZoneType.SafeZone;
         }
@@ -42,25 +29,10 @@ public class SpinGameData : ScriptableObject
     }
 
     [Serializable]
-    public class SpinWheelData
-    {
-        public ZoneType Type;
-        public bool HasBomb;
-        public string WheelSpriteName;
-        public string IndicatorSpriteName;
-        public RewardData[] Rewards;
-    }
-
-    [Serializable]
     public class RewardData
     {
-        public string SpriteName;
+        public Sprite Sprite;
         public int Amount;
-
-        // public Sprite GetSprite()
-        // {
-        //     
-        // }
     }
     
     public enum ZoneType

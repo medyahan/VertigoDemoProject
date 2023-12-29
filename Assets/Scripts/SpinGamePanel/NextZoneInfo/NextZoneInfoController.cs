@@ -17,6 +17,8 @@ public class NextZoneInfoController : BaseMonoBehaviour
     private List<int> _nextSuperZoneList = new List<int>();
     
     private int _totalZoneCount;
+    private int _everySafeZoneFactor;
+    private int _everySuperZoneFactor;
     
     #endregion // Variable Field
 
@@ -25,6 +27,8 @@ public class NextZoneInfoController : BaseMonoBehaviour
         base.Initialize(list);
 
         _totalZoneCount = (int) list[0];
+        _everySafeZoneFactor = (int) list[1];
+        _everySuperZoneFactor = (int) list[2];
         
         ListNextZones();
 
@@ -40,21 +44,29 @@ public class NextZoneInfoController : BaseMonoBehaviour
         _nextSuperZoneList.Clear();
     }
 
+    /// <summary>
+    /// Creates lists of next zones based on specific conditions.
+    /// </summary>
     private void ListNextZones()
     {
         for (int i = 1; i < _totalZoneCount+1; i++)
         {
-            if (i % 30 == 0)
+            if (i % _everySuperZoneFactor == 0)
             {
                 _nextSuperZoneList.Add(i);
             }
-            else if (i % 5 == 0)
+            else if (i % _everySafeZoneFactor == 0)
             {
                 _nextSafeZoneList.Add(i);
             }
         }
     }
 
+    /// <summary>
+    /// Handles the change in the current game zone index. Updates the lists of next safe and super zones
+    /// based on the current zone index and triggers the display of relevant texts.
+    /// </summary>
+    /// <param name="currentZoneIndex">The index of the current game zone.</param>
     public void OnChangeCurrentZoneIndex(int currentZoneIndex)
     {
         // Update next safe zone info
@@ -64,10 +76,7 @@ public class NextZoneInfoController : BaseMonoBehaviour
             {
                 _nextSafeZoneList.RemoveAt(0);
             }
-            _nextSafeZoneText.text = _nextSafeZoneList[0].ToString();
         }
-        else
-            _nextSafeZoneText.text = "X";
         
         // Update next super zone info
         if (_nextSuperZoneList.Count != 0)
@@ -76,10 +85,27 @@ public class NextZoneInfoController : BaseMonoBehaviour
             {
                 _nextSuperZoneList.RemoveAt(0);
             }
+        }
+        
+        DisplayTexts();
+    }
+
+    /// <summary>
+    /// Displays the next safe and super zone indices on the UI based on the current state of their respective lists.
+    /// </summary>
+    private void DisplayTexts()
+    {
+        if (_nextSafeZoneList.Count != 0)
+            _nextSafeZoneText.text = _nextSafeZoneList[0].ToString();
+        else
+            _nextSafeZoneText.text = "X"; // If there are no more safe zones, display "X".
+        
+        if (_nextSuperZoneList.Count != 0)
+        {
             _nextSuperZoneText.text = _nextSuperZoneList[0].ToString();
         }
         else
-            _nextSuperZoneText.text = "X";
+            _nextSuperZoneText.text = "X"; // If there are no more super zones, display "X".
     }
     
 }

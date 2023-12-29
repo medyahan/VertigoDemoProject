@@ -50,9 +50,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0146a7aa4e88b0947acad70996a9cedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reward: {fileID: 8058933348228290147}
+  _rewardTransform: {fileID: 8058933348228290147}
   _rewardImage: {fileID: 8058933349756706058}
   _amountText: {fileID: 8058933349162169933}
+  _rewardData:
+    Sprite: {fileID: 0}
+    Amount: 0
 --- !u!1 &8058933348228290144
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +106,7 @@ GameObject:
   - component: {fileID: 8058933349162169932}
   - component: {fileID: 8058933349162169933}
   m_Layer: 5
-  m_Name: AmountText
+  m_Name: ui_text_amount_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +160,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x30K
+  m_text: x0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -238,7 +241,7 @@ GameObject:
   - component: {fileID: 8058933349756706061}
   - component: {fileID: 8058933349756706058}
   m_Layer: 5
-  m_Name: RewardImage
+  m_Name: ui_image_reward_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

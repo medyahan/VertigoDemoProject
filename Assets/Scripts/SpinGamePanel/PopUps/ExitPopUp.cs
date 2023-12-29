@@ -14,18 +14,30 @@ public class ExitPopUp : BasePopUp
     #endregion // Event Field
     
     [Header("BUTTONS")]
-    [SerializeField] private Button _collectRewardsButton;
-    [SerializeField] private Button _goBackButton;
+    [SerializeField] private GameObject _collectRewardsButtonObj;
+    [SerializeField] private GameObject _goBackButtonObj;
+    
+    private BaseButton _collectRewardsButton;
+    private BaseButton _goBackButton;
+    
+    private void OnValidate()
+    {
+        if (_collectRewardsButton != null)
+            _collectRewardsButton.OnClick = null;
+        
+        if (_goBackButton != null)
+            _goBackButton.OnClick = null;
+            
+        _collectRewardsButton = _collectRewardsButtonObj.GetComponent<BaseButton>();
+        _collectRewardsButton.OnClick += OnClickCollectRewardsButton;
+        
+        _goBackButton = _goBackButtonObj.GetComponent<BaseButton>();
+        _goBackButton.OnClick += OnClickGoBackButton;
+    }
     
     public override void Initialize(params object[] list)
     {
         base.Initialize();
-        
-        _collectRewardsButton.onClick.RemoveAllListeners();
-        _collectRewardsButton.onClick.AddListener(OnClickCollectRewardsButton);
-        
-        _goBackButton.onClick.RemoveAllListeners();
-        _goBackButton.onClick.AddListener(OnClickGoBackButton);
     }
 
     public override void Open()
@@ -46,6 +58,8 @@ public class ExitPopUp : BasePopUp
         });
     }
 
+    #region BUTTON LISTENERS
+
     private void OnClickGoBackButton()
     {
         Close();
@@ -56,4 +70,6 @@ public class ExitPopUp : BasePopUp
         Close();
         ClickedCollectRewardsButton?.Invoke();
     }
+
+    #endregion
 }
