@@ -17,19 +17,36 @@ public class CurrencyController : BaseMonoBehaviour
         _goldCurrencyText.text = GameManager.Instance.GoldCurrency.ToString();
     }
 
-    public void UpdateGoldCurrency(int value)
+    /// <summary>
+    /// Updates the specified currency type with the given value and updates the corresponding UI text.
+    /// </summary>
+    /// <param name="currencyType">Type of the currency (Gold or Cash).</param>
+    /// <param name="value">The value to add to the currency.</param>
+    public void UpdateCurrency(CurrencyType currencyType, int value)
     {
-        int oldValue = GameManager.Instance.GoldCurrency;
-        GameManager.Instance.GoldCurrency = oldValue + value;
+        int oldValue;
         
-        _goldCurrencyText.text = GameManager.Instance.GoldCurrency.ToString();
+        if (currencyType == CurrencyType.Gold)
+        {
+            oldValue = GameManager.Instance.GoldCurrency;
+            GameManager.Instance.GoldCurrency = oldValue + value;
+
+            _goldCurrencyText.text = GameManager.Instance.GoldCurrency.ToString();
+            return;
+        }
+
+        if (currencyType == CurrencyType.Cash)
+        {
+            oldValue = GameManager.Instance.CashCurrency;
+            GameManager.Instance.CashCurrency = oldValue + value;
+        
+            _cashCurrencyText.text = GameManager.Instance.CashCurrency.ToString();
+        }
     }
 
-    public void UpdateCashCurrency(int value)
+    public enum CurrencyType
     {
-        int oldValue = GameManager.Instance.CashCurrency;
-        GameManager.Instance.CashCurrency = oldValue + value;
-        
-        _cashCurrencyText.text = GameManager.Instance.CashCurrency.ToString();
+        Cash,
+        Gold,
     }
 }

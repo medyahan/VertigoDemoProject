@@ -15,5 +15,6 @@ MonoBehaviour:
   TotalZoneCount: 60
   EverySafeZoneFactor: 5
   EverySuperZoneFactor: 30
+  ReviveCurrencyType: 1
   ReviveCurrencyValue: 100
   BombSprite: {fileID: 21300000, guid: 7e226bb718c8b3f40854ede19507b3f6, type: 3}

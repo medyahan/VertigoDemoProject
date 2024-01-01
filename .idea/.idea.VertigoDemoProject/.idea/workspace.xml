@@ -3,43 +3,38 @@
   <component name="ChangeListManager">
     <list default="true" id="7c2e483a-ec1c-4c79-bca5-7625b0abf490" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VertigoDemoProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VertigoDemoProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/UI_icon_cash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/UI_icon_cash.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/UI_icon_gold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/UI_icon_gold.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/ui_card_icon_death.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/ui_card_icon_death.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/ui_icon_helmet_pumpkin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/ui_icon_helmet_pumpkin.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/ui_icon_render_t_cons_molotov.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Icons/ui_icon_render_t_cons_molotov.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/ui_mainmenu_bg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Backgrounds/ui_mainmenu_bg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/UI_button_grey_standard.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/UI_button_grey_standard.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/UI_button_orange_standard.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/UI_button_orange_standard.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/star_flash_alpha.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/star_flash_alpha.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/star_glow_alpha.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/star_glow_alpha.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_frame_12px_neutral.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_frame_12px_neutral.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_frame_4px_zone.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_frame_4px_zone.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_frame_gardient.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_frame_gardient.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_bronze.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_bronze.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_gold.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_gold.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_bg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_bg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_coming.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_coming.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_current.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_current.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_current_white.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_current_white.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_super.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_super.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_white.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_panel_zone_white.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_zone_map_frame.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Generic/ui_card_zone_map_frame.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_bronze_base.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_bronze_base.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_bronze_indicator.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_bronze_indicator.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_generic_button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_generic_button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_golden_base.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_golden_base.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_golden_indicator.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_golden_indicator.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_silver_base.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_silver_base.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_silver_indicator.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/SpinGamePanel/ui_spin_silver_indicator.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinGameData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinGameData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinWheel/BronzeSpinWheelData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinWheel/BronzeSpinWheelData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinWheel/GoldSpinWheelData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinWheel/GoldSpinWheelData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinWheel/SilverSpinWheelData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/SpinGame/SpinWheel/SilverSpinWheelData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/SpinGamePanel/RewardInventoryCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/SpinGamePanel/RewardInventoryCell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/BaseButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BaseButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/SpinGameData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/SpinGameData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/SpinWheelData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/SpinWheelData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuPanel/MainMenuPanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuPanel/MainMenuPanelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/NextZoneInfo/NextZoneInfoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/NextZoneInfo/NextZoneInfoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/PopUps/BombExplodedPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/PopUps/BombExplodedPopUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/PopUps/CollectedRewardsPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/PopUps/CollectedRewardsPopUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/PopUps/ExitPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/PopUps/ExitPopUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/RewardInventory/RewardInventoryCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/RewardInventory/RewardInventoryCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/RewardInventory/RewardInventoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/RewardInventory/RewardInventoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinGameEventLib.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinGameEventLib.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/CurrencyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/CurrencyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/SpinGame/SpinGameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/SpinGame/SpinGameData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinGamePanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinGamePanelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinWheel/SpinWheelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinWheel/SpinWheelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/ZoneProgressBar/ZoneCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/ZoneProgressBar/ZoneCell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinWheel/RewardCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/SpinWheel/RewardCell.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/ZoneProgressBar/ZoneIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/ZoneProgressBar/ZoneIndicator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/ZoneProgressBar/ZoneProgressBarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpinGamePanel/ZoneProgressBar/ZoneProgressBarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseRequestFolder/Videos/movie_001.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseRequestFolder/Videos/movie_002.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +114,7 @@
       <workItem from="1703370065925" duration="38164000" />
       <workItem from="1703604855783" duration="21842000" />
       <workItem from="1703772205086" duration="36543000" />
+      <workItem from="1704144422581" duration="2074000" />
     </task>
     <servers />
   </component>

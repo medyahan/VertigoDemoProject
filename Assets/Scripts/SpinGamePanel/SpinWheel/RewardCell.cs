@@ -32,10 +32,16 @@ namespace SpinGamePanel.SpinWheel
                 SetData(_rewardData);
         }
 
-        public void SetData(RewardData rewardDataData)
+        public void SetData(RewardData rewardData)
         {
             _isBomb = false;
-            _rewardData = rewardDataData;
+
+            // Creating new reward data to end the reference of RewardData which is came as parameter
+            _rewardData = new RewardData
+            {
+                Sprite = rewardData.Sprite,
+                Amount = rewardData.Amount
+            };
 
             _rewardImage.sprite = _rewardData.Sprite;
             _amountText.text = "x" + _rewardData.Amount;

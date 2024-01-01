@@ -142,7 +142,7 @@ namespace SpinGamePanel
         
         private void OnClickedReviveButton()
         {
-            _currencyController.UpdateGoldCurrency(-_spinGameData.ReviveCurrencyValue);
+            _currencyController.UpdateCurrency(_spinGameData.ReviveCurrencyType, -_spinGameData.ReviveCurrencyValue);
             
             AdvanceToNextZoneIndex();
         }

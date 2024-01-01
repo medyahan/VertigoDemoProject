@@ -6,11 +6,11 @@ using ZoneType = SpinGameData.ZoneType;
 
 public class ZoneIndicator : BaseMonoBehaviour
 {
-    [Header("ZONE INDICATOR")]
+    [Header("COMPONENTS")]
     [SerializeField] private Image _zoneIndicatorImage;
     [SerializeField] private TMP_Text _zoneIndicatorText;
 
-    [Header("ZONE INDICATOR SPRITES")]
+    [Header("SPRITES")]
     [SerializeField] private Sprite _defaultZoneSprite;
     [SerializeField] private Sprite _safeZoneSprite;
     [SerializeField] private Sprite _superZoneSprite;

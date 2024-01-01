@@ -11,6 +11,7 @@ public class SpinGameData : ScriptableObject
     public int EverySuperZoneFactor;
 
     [Header("CURRENCY VALUES")] 
+    public CurrencyController.CurrencyType ReviveCurrencyType;
     public int ReviveCurrencyValue;
     
     [Header("BOMB")] 
@@ -43,14 +44,5 @@ public class SpinGameData : ScriptableObject
         DefaultZone,
         SafeZone,
         SuperZone
-    }
-
-    public enum RewardType
-    {
-        Bomb,
-        Cash,
-        Weapon,
-        Gold,
-        Knife
     }
 }
