@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ExitPopUp : BasePopUp
 {
@@ -22,22 +19,19 @@ public class ExitPopUp : BasePopUp
     
     private void OnValidate()
     {
-        if (_collectRewardsButton != null)
-            _collectRewardsButton.OnClick = null;
-        
-        if (_goBackButton != null)
-            _goBackButton.OnClick = null;
-            
         _collectRewardsButton = _collectRewardsButtonObj.GetComponent<BaseButton>();
-        _collectRewardsButton.OnClick += OnClickCollectRewardsButton;
-        
         _goBackButton = _goBackButtonObj.GetComponent<BaseButton>();
-        _goBackButton.OnClick += OnClickGoBackButton;
     }
     
     public override void Initialize(params object[] list)
     {
         base.Initialize();
+        
+        _collectRewardsButton = _collectRewardsButtonObj.GetComponent<BaseButton>();
+        _goBackButton = _goBackButtonObj.GetComponent<BaseButton>();
+        
+        _collectRewardsButton.OnClick += OnClickCollectRewardsButton;
+        _goBackButton.OnClick += OnClickGoBackButton;
     }
 
     public override void Open()
@@ -56,6 +50,9 @@ public class ExitPopUp : BasePopUp
         {
             gameObject.SetActive(false);
         });
+        
+        _collectRewardsButton.OnClick -= OnClickCollectRewardsButton;
+        _goBackButton.OnClick -= OnClickGoBackButton;
     }
 
     #region BUTTON LISTENERS

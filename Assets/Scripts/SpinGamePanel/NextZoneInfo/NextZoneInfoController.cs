@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using Core;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NextZoneInfoController : BaseMonoBehaviour

@@ -1,10 +1,7 @@
 using System.Collections.Generic;
 using Core;
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using ZoneType = SpinGameData.ZoneType;
 
 namespace SpinGamePanel.ZoneProgressBar
 {
@@ -25,8 +22,8 @@ namespace SpinGamePanel.ZoneProgressBar
         [SerializeField] private float _scrollAnimateDuration;
         [SerializeField] private int _cellWidth;
         
+        [SerializeField] private float _startContentParentPosX;
         private int _totalZoneCount;
-        private float _startContentParentPosX;
         
         #endregion // Variable Field
 
@@ -35,29 +32,16 @@ namespace SpinGamePanel.ZoneProgressBar
             base.Initialize(list);
 
             _totalZoneCount = (int) list[0];
-
-            _startContentParentPosX = _contentParent.localPosition.x;
             
+            ResetContentPosition();
             CreateZoneCells();
-        
             _zoneIndicator.UpdateZoneIndicatorUI(1);
         }
 
         public override void End()
         {
             base.End();
-               
-           Vector3 contentPosition = _contentParent.localPosition;
-           contentPosition.x = _startContentParentPosX;
-
-           _contentParent.localPosition = contentPosition;
-
-           foreach (var zoneCell in _zoneCellList)
-           {
-               zoneCell.End();
-               Destroy(zoneCell.gameObject);
-           }
-            _zoneCellList.Clear();
+            ClearAllZoneCell();
         }
 
         /// <summary>
@@ -76,12 +60,33 @@ namespace SpinGamePanel.ZoneProgressBar
         }
 
         /// <summary>
-        /// Handles the change in the current game zone index and type. Inactivates the previous zone cell,
-        /// animates the scroll content to the next zone, and updates the zone indicator.
+        /// Clears and removes all zone cells from the list and scene.
+        /// </summary>
+        private void ClearAllZoneCell()
+        {
+            foreach (ZoneCell zoneCell in _zoneCellList){
+                
+                if(zoneCell == null)
+                    continue;
+               
+                zoneCell.End();
+                Destroy(zoneCell.gameObject);
+            }
+            _zoneCellList.Clear();
+        }
+
+        private void ResetContentPosition()
+        {
+            Vector3 contentPosition = _contentParent.localPosition;
+            contentPosition.x = _startContentParentPosX;
+            _contentParent.localPosition = contentPosition;
+        }
+
+        /// <summary>
+        /// Handles the visual transition to the next game zone, deactivating the previous zone cell
+        /// and animating the scroll content to reveal the next zone.
         /// </summary>
         /// <param name="currentZoneIndex">The index of the current game zone.</param>
-        /// <param name="currentZoneType">The type of the current game zone.</param>
-
         public void OnChangeCurrentZoneIndex(int currentZoneIndex)
         {
             // Inactivate previous zone cell

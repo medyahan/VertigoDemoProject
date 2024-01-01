@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17646bd2edf755c419a8cfd357833659, type: 3}
   m_Name: SpinGameData
   m_EditorClassIdentifier: 
-  BombSprite: {fileID: 21300000, guid: 7e226bb718c8b3f40854ede19507b3f6, type: 3}
+  TotalZoneCount: 60
   EverySafeZoneFactor: 5
   EverySuperZoneFactor: 30
   ReviveCurrencyValue: 100
+  BombSprite: {fileID: 21300000, guid: 7e226bb718c8b3f40854ede19507b3f6, type: 3}

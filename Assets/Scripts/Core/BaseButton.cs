@@ -1,18 +1,18 @@
 using System;
-using Core;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BaseButton : BaseMonoBehaviour, IPointerClickHandler
+public class BaseButton : Button
 {
     public Action OnClick;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public override void OnPointerClick(PointerEventData eventData)
     {
+        base.OnPointerClick(eventData);
         OnClick?.Invoke();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         OnClick = null;
     }

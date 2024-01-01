@@ -13,18 +13,26 @@ public class MainMenuPanelManager : BaseMonoBehaviour
 
     private void OnValidate()
     {
-        if (_spinGameButton != null)
-            _spinGameButton.OnClick = null;
-            
         _spinGameButton = _spinGameButtonObj.GetComponent<BaseButton>();
-        _spinGameButton.OnClick += OnClickSpinGameButton;
     }
 
     public override void Initialize(params object[] list)
     {
+        _spinGameButton = _spinGameButtonObj.GetComponent<BaseButton>();
+        
         base.Initialize(list);
         
         _currencyController.Initialize();
+    }
+
+    public override void RegisterEvents()
+    {
+        _spinGameButton.OnClick += OnClickSpinGameButton;
+    }
+
+    public override void UnregisterEvents()
+    {
+        _spinGameButton.OnClick -= OnClickSpinGameButton;
     }
 
     private void OnClickSpinGameButton()

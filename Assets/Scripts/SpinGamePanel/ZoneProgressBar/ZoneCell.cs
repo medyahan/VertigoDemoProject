@@ -22,7 +22,7 @@ namespace SpinGamePanel.ZoneProgressBar
         [SerializeField] private float _inactivateAlphaValue;
 
         private int _zoneIndex;
-        private SpinGameData.ZoneType _zoneType;
+        private ZoneType _zoneType;
         
         #endregion // Variable Field
     

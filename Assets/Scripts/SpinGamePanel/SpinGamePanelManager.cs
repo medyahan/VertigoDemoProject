@@ -12,7 +12,6 @@ namespace SpinGamePanel
         #region Variable Field
         
         [SerializeField] private SpinGameData _spinGameData;
-
         [SerializeField] private GameObject _gamePanel;
 
         [Header("CONTROLLERS")] 
@@ -26,9 +25,9 @@ namespace SpinGamePanel
         [SerializeField] private BombExplodedPopUp _bombExplodedPopUp;
         [SerializeField] private ExitPopUp _exitPopUp;
         [SerializeField] private CollectedRewardsPopUp _collectedRewardsPopUp;
+        [SerializeField] private ShowRewardPopUp _showRewardPopUp;
 
-        [SerializeField] private int _totalZoneCount;
-        
+        private int _totalZoneCount;
         private int _currentZoneIndex = 1;
 
         #endregion //Variable Field
@@ -37,6 +36,7 @@ namespace SpinGamePanel
             base.Initialize(list);
 
             _currentZoneIndex = 1;
+            _totalZoneCount = _spinGameData.TotalZoneCount;
             _gamePanel.SetActive(true);
             
             _currencyController.Initialize();
@@ -59,6 +59,7 @@ namespace SpinGamePanel
             _bombExplodedPopUp.ClickedGiveUpButton += OnClickedGiveUpButton;
             _exitPopUp.ClickedCollectRewardsButton += OnClickedCollectRewardsButton;
             _collectedRewardsPopUp.ClickedClaimButton += OnClickedClaimButton;
+            _showRewardPopUp.ClosedShowRewardPopUp += OnClosedShowRewardPopUp;
         }
 
         public override void UnregisterEvents()
@@ -74,6 +75,7 @@ namespace SpinGamePanel
             _bombExplodedPopUp.ClickedGiveUpButton -= OnClickedGiveUpButton;
             _exitPopUp.ClickedCollectRewardsButton -= OnClickedCollectRewardsButton;
             _collectedRewardsPopUp.ClickedClaimButton -= OnClickedClaimButton;
+            _showRewardPopUp.ClosedShowRewardPopUp -= OnClosedShowRewardPopUp;
         }
 
         public override void End()
@@ -84,22 +86,29 @@ namespace SpinGamePanel
             _rewardInventoryController.End();
             _zoneProgressBarController.End();
             _nextZoneInfoController.End();
+            _currencyController.End();
         }
         
         /// <summary>
-        /// Increases the current game zone index and checks if it exceeds the total zone count.
-        /// If the current index surpasses the total count, stops the spinning game through the GameManager.
+        /// Advances to the next game zone, updating UI elements.
+        /// Hides the game panel and initializes the collected rewards popup if the total zone count is exceeded.
         /// </summary>
-        private void IncreaseCurrentZoneIndex()
+        private void AdvanceToNextZoneIndex()
         {
             _currentZoneIndex++;
 
             // Check if the current index exceeds the total zone count.
             if (_currentZoneIndex > _totalZoneCount)
             {
-                // ödülleri al ve oyunu bitir
-                GameManager.Instance.StopSpinGame();
+                _gamePanel.SetActive(false);
+                _collectedRewardsPopUp.Initialize();
+                return;
             }
+            
+            // Update UI elements to reflect the changes in the current game zone.
+            _zoneProgressBarController.OnChangeCurrentZoneIndex(_currentZoneIndex);
+            _spinWheelController.UpdateWheelByZoneIndex(_currentZoneIndex);
+            _nextZoneInfoController.OnChangeCurrentZoneIndex(_currentZoneIndex);
         }
 
         #region LISTENERS
@@ -111,14 +120,14 @@ namespace SpinGamePanel
         /// <param name="collectedRewardData">Data associated with the collected reward.</param>
         private void OnCollectedReward(RewardData collectedRewardData)
         {
+            _showRewardPopUp.Initialize(collectedRewardData);
+        }
+
+        private void OnClosedShowRewardPopUp(RewardData collectedRewardData)
+        {
             _rewardInventoryController.AddRewardToInventory(collectedRewardData);
 
-            IncreaseCurrentZoneIndex();
-            
-            // Update UI elements to reflect the changes in the current game zone.
-            _zoneProgressBarController.OnChangeCurrentZoneIndex(_currentZoneIndex);
-            _spinWheelController.UpdateWheelByZoneIndex(_currentZoneIndex);
-            _nextZoneInfoController.OnChangeCurrentZoneIndex(_currentZoneIndex);
+            AdvanceToNextZoneIndex();
         }
         
         private void OnBombExploded()
@@ -135,12 +144,7 @@ namespace SpinGamePanel
         {
             _currencyController.UpdateGoldCurrency(-_spinGameData.ReviveCurrencyValue);
             
-            IncreaseCurrentZoneIndex();
-            
-            // Update UI elements to reflect the changes in the current game zone.
-            _zoneProgressBarController.OnChangeCurrentZoneIndex(_currentZoneIndex);
-            _spinWheelController.UpdateWheelByZoneIndex(_currentZoneIndex);
-            _nextZoneInfoController.OnChangeCurrentZoneIndex(_currentZoneIndex);
+            AdvanceToNextZoneIndex();
         }
         
         private void OnClickedGiveUpButton()

@@ -17,21 +17,37 @@ MonoBehaviour:
   WheelSprite: {fileID: 21300000, guid: 1992e1726791dd1408b4b9c3069d4140, type: 3}
   IndicatorSprite: {fileID: 21300000, guid: c0c3300b4f800ec43a99ea0fc4496f3b, type: 3}
   Rewards:
-  - Sprite: {fileID: 21300000, guid: bc8971f518cafd146b75ce418fd1b532, type: 3}
-    Amount: 10
+  - Sprite: {fileID: 21300000, guid: d238d4ab9905800459913a2ac89c1da9, type: 3}
+    Amount: 4
   - Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
-    Amount: 20
-  - Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
-    Amount: 100
+    Amount: 2000
   - Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
     Amount: 1000
+  - Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    Amount: 5000
   - Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
-    Amount: 500
+    Amount: 2500
   - Sprite: {fileID: 21300000, guid: aa5ca3f644951664eaabc105dd09dc9c, type: 3}
-    Amount: 3
-  - Sprite: {fileID: 21300000, guid: 46876b5c582b18a4bb1d45078d7a0052, type: 3}
+    Amount: 5
+  - Sprite: {fileID: 21300000, guid: 01257364a512e434faaa14ee022be68b, type: 3}
     Amount: 2
   - Sprite: {fileID: 21300000, guid: 02a733d27a97e4e4e8ff060b188dcfce, type: 3}
-    Amount: 200
+    Amount: 2000
   - Sprite: {fileID: 21300000, guid: cc54737dfb5829942b610400b8a13643, type: 3}
+    Amount: 3000
+  - Sprite: {fileID: 21300000, guid: 11b9bd9aa8bb4514792310cd573e2a72, type: 3}
+    Amount: 20
+  - Sprite: {fileID: 21300000, guid: de8641af7cb45c44cac19da65a287104, type: 3}
+    Amount: 4
+  - Sprite: {fileID: 21300000, guid: 9fe88b59feec1154aac2ad33e5ffbaa0, type: 3}
+    Amount: 5
+  - Sprite: {fileID: 21300000, guid: 241370cfa11c94b4e9563373060d867e, type: 3}
     Amount: 200
+  - Sprite: {fileID: 21300000, guid: 4329684275408f242988b1736b3f96c2, type: 3}
+    Amount: 500
+  - Sprite: {fileID: 21300000, guid: 39911d055b731e640ab8089aadba28c2, type: 3}
+    Amount: 10
+  - Sprite: {fileID: 21300000, guid: 36ce415099c2dcb47be70aef44a936a4, type: 3}
+    Amount: 20
+  - Sprite: {fileID: 21300000, guid: 611ceb4fef4113242a76957dad385dfb, type: 3}
+    Amount: 30

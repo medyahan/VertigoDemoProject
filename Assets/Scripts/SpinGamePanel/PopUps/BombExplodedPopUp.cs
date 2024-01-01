@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BombExplodedPopUp : BasePopUp
 {
@@ -29,17 +26,8 @@ public class BombExplodedPopUp : BasePopUp
     
     private void OnValidate()
     {
-        if (_giveUpButton != null)
-            _giveUpButton.OnClick = null;
-        
-        if (_reviveButton != null)
-            _reviveButton.OnClick = null;
-            
         _giveUpButton = _giveUpButtonObj.GetComponent<BaseButton>();
-        _giveUpButton.OnClick += OnClickGiveUpButton;
-        
         _reviveButton = _reviveButtonObj.GetComponent<BaseButton>();
-        _reviveButton.OnClick += OnClickReviveButton;
     }
 
     public override void Initialize(params object[] list)
@@ -47,9 +35,16 @@ public class BombExplodedPopUp : BasePopUp
         base.Initialize();
 
         _reviveCurrencyValue = (int) list[0];
-        _reviveCurrencyValueText.text = _reviveCurrencyValue.ToString();
+
+        _giveUpButton = _giveUpButtonObj.GetComponent<BaseButton>();
+        _reviveButton = _reviveButtonObj.GetComponent<BaseButton>();
+        
+        _giveUpButton.OnClick += OnClickGiveUpButton;
+        _reviveButton.OnClick += OnClickReviveButton;
+        
+        PrepareReviveButton();
     }
-    
+
     public override void Open()
     {
         base.Open();
@@ -67,6 +62,21 @@ public class BombExplodedPopUp : BasePopUp
             gameObject.SetActive(false);
             
         });
+        
+        _giveUpButton.OnClick -= OnClickGiveUpButton;
+        _reviveButton.OnClick -= OnClickReviveButton;
+    }
+
+    private void PrepareReviveButton()
+    {
+        _reviveCurrencyValueText.text = _reviveCurrencyValue.ToString();
+
+        if (GameManager.Instance.GoldCurrency < _reviveCurrencyValue)
+        {
+            _reviveButton.enabled = false;
+            return;
+        }
+        _reviveButton.enabled = true;
     }
 
     #region BUTTON LISTENERS

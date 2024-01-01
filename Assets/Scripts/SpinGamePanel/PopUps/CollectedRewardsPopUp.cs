@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using RewardData = SpinGameData.RewardData;
 
 public class CollectedRewardsPopUp : BasePopUp
@@ -26,20 +24,27 @@ public class CollectedRewardsPopUp : BasePopUp
 
     private void OnValidate()
     {
-        if (_claimButton != null)
-            _claimButton.OnClick = null;
-            
         _claimButton = _claimButtonObj.GetComponent<BaseButton>();
-        _claimButton.OnClick += OnClickClaimButton;
     }
     
     public override void Initialize(params object[] list)
     {
         base.Initialize();
+        
+        _claimButton = _claimButtonObj.GetComponent<BaseButton>();
+        _claimButton.OnClick += OnClickClaimButton;
 
         _collectedRewardDataArray = SpinGameEventLib.Instance.GetAllRewardInInventory?.Invoke();
         
         CreateRewardCards();
+    }
+
+    public override void Close()
+    {
+        ClearAllRewardCard();
+        _claimButton.OnClick -= OnClickClaimButton;
+        
+        base.Close();
     }
 
     private void CreateRewardCards()
@@ -52,6 +57,19 @@ public class CollectedRewardsPopUp : BasePopUp
             rewardCard.SetData(rewardData);
             _rewardCardList.Add(rewardCard);
         }
+    }
+
+    private void ClearAllRewardCard()
+    {
+        foreach (RewardCard rewardCard in _rewardCardList){
+                
+            if(rewardCard == null)
+                continue;
+               
+            rewardCard.End();
+            Destroy(rewardCard.gameObject);
+        }
+        _rewardCardList.Clear();
     }
 
     #region BUTTON LISTENERS

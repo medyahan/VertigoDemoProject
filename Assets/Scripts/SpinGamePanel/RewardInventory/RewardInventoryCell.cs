@@ -1,4 +1,3 @@
-using System.Collections;
 using Core;
 using DG.Tweening;
 using TMPro;

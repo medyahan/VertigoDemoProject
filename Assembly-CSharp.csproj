@@ -52,10 +52,10 @@
      <Compile Include="Assets\Scripts\SpinGamePanel\RewardInventory\RewardInventoryCell.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\RewardInventory\RewardInventoryController.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneProgressBarController.cs" />
-     <Compile Include="Assets\Scripts\Data\SpinWheelData.cs" />
+     <Compile Include="Assets\Scripts\Data\SpinGame\SpinWheelData.cs" />
      <Compile Include="Assets\Scripts\Common\CurrencyController.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\BombExplodedPopUp.cs" />
-     <Compile Include="Assets\Scripts\Data\SpinGameData.cs" />
+     <Compile Include="Assets\Scripts\Data\SpinGame\SpinGameData.cs" />
      <Compile Include="Assets\Scripts\Core\BaseMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\Core\BaseButton.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\SpinWheel\SpinWheelController.cs" />
@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\SpinGamePanel\ZoneProgressBar\ZoneCell.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\SpinGamePanelManager.cs" />
      <Compile Include="Assets\Scripts\SpinGamePanel\Card\RewardCard.cs" />
+     <Compile Include="Assets\Scripts\SpinGamePanel\PopUps\ShowRewardPopUp.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\Scripts\SpinGamePanel\Card" />
@@ -97,6 +98,7 @@
      <Folder Include="Assets\Art\Sprites\Icons\Knifes" />
      <Folder Include="Assets\Art\Sprites\Icons\Outfits" />
      <Folder Include="Assets\Art\Sprites\Icons" />
+     <Folder Include="Assets\Scripts\Data\SpinGame" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <Folder Include="Assets\Art\Sprites\Icons\Grenades" />
      <Folder Include="Assets\Prefabs\UI\SpinGamePanel" />
@@ -118,6 +120,7 @@
      <Folder Include="Assets\Art\Sprites\Icons\Chests" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Prefabs" />
+     <Folder Include="Assets\Art\Sprites\Icons\Death" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scripts\MainMenuPanel" />
@@ -132,6 +135,7 @@
      <Folder Include="Assets\TextMesh Pro\Documentation" />
      <Folder Include="Assets\Art\Sprites\Generic" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <Folder Include="Assets\Art\Sprites\Icons\Currencies" />
      <Folder Include="Assets\Art" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -842,6 +846,15 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder.Editor">
+     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder">
+     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder.Base">
+     <HintPath>C:\Users\Medya\Documents\GitHub\VertigoDemoProject\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

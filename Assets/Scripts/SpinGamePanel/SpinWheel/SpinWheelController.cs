@@ -53,33 +53,38 @@ namespace SpinGamePanel.SpinWheel
 
         private void OnValidate()
         {
-            if (_spinButton != null)
-                _spinButton.OnClick = null;
-            
             _spinButton = _spinButtonObj.GetComponent<BaseButton>();
-            _spinButton.OnClick += OnClickSpinButton;
         }
 
         public override void Initialize(params object[] list)
         {
+            _spinButton = _spinButtonObj.GetComponent<BaseButton>();
+            
             base.Initialize(list);
 
             _currentZoneIndex = (int) list[0];
             _spinGameData = list[1] as SpinGameData;
-            
-            _wheelTransform.eulerAngles = Vector3.zero;
-            _angelOfOneRewardCell = CIRCLE_ANGLE / _wheelSliceCount;
+
+            ResetWheelValues();
             
             CreateRewardCells();
-
             UpdateWheelByZoneIndex(_currentZoneIndex);
         }
 
-        public override void End()
+        public override void RegisterEvents()
         {
-            base.End();
+            _spinButton.OnClick += OnClickSpinButton;
+        }
 
-            ClearAllRewardCell();
+        public override void UnregisterEvents()
+        {
+            _spinButton.OnClick -= OnClickSpinButton;
+        }
+
+        private void ResetWheelValues()
+        {
+            _wheelTransform.eulerAngles = Vector3.zero;
+            _angelOfOneRewardCell = CIRCLE_ANGLE / _wheelSliceCount;
         }
 
         /// <summary>
@@ -91,13 +96,15 @@ namespace SpinGamePanel.SpinWheel
             
             for (int i = 0; i < _wheelSliceCount; i++)
             {
-                RewardCell rewardCell = Instantiate(_rewardCellPrefab, Vector3.zero,
-                    Quaternion.Euler(0, 0, -_angelOfOneRewardCell * i), _rewardContentParent);
+                RewardCell rewardCell = Instantiate(_rewardCellPrefab, Vector3.zero, Quaternion.Euler(0, 0, -_angelOfOneRewardCell * i), _rewardContentParent);
                 rewardCell.transform.localPosition = Vector3.zero;
                 _rewardCellList.Add(rewardCell);
             }
         }
 
+        /// <summary>
+        /// Clears and removes all reward cells from the list and scene.
+        /// </summary>
         private void ClearAllRewardCell()
         {
             foreach (var rewardCell in _rewardCellList)
@@ -180,6 +187,8 @@ namespace SpinGamePanel.SpinWheel
         }
         
         #endregion
+
+        #region UPDATE WHEEL AND SLICES TRANSACTIONS
         
         /// <summary>
         /// Updates the spin wheel visual elements and reward cells based on the specified game zone index.
@@ -193,6 +202,16 @@ namespace SpinGamePanel.SpinWheel
             _wheelImage.sprite = spinWheelData.WheelSprite;
             _indicatorImage.sprite = spinWheelData.IndicatorSprite;
 
+            UpdateRewardCells(spinWheelData);
+        }
+
+        /// <summary>
+        /// Updates the reward cells based on the provided SpinWheelData.
+        /// </summary>
+        /// <param name="spinWheelData">The SpinWheelData containing information about rewards and bombs.</param>
+        private void UpdateRewardCells(SpinWheelData spinWheelData)
+        {
+            // Update reward cells with random rewards from the spin wheel data.
             for (int i = 0; i < _rewardCellList.Count; i++)
             {
                 RewardData rewardData = spinWheelData.Rewards[Random.Range(0, spinWheelData.Rewards.Length)];
@@ -205,7 +224,14 @@ namespace SpinGamePanel.SpinWheel
                 _rewardCellList[Random.Range(0, _wheelSliceCount)].MakeBomb(_spinGameData.BombSprite);
             }
         }
+        
+        #endregion
 
+        /// <summary>
+        /// Retrieves the SpinWheelData associated with the specified game zone index based on its ZoneType.
+        /// </summary>
+        /// <param name="zoneIndex">The index of the game zone.</param>
+        /// <returns>The SpinWheelData associated with the specified game zone index.</returns>
         private SpinWheelData GetSpinWheelDataByZoneIndex(int zoneIndex)
         {
             ZoneType zoneType = SpinGameEventLib.Instance.GetZoneTypeOfZoneIndex(zoneIndex);

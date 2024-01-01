@@ -1,12 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Core;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.U2D;
-using UnityEngine.UI;
-using RewardType = SpinGameData.RewardType;
 using RewardData = SpinGameData.RewardData;
 
 namespace SpinGamePanel.RewardInventory
@@ -14,9 +9,7 @@ namespace SpinGamePanel.RewardInventory
     public class RewardInventoryController : BaseMonoBehaviour
     {
         #region Variable Field
-        
-        [SerializeField] private SpriteAtlas _rewardSpriteAtlas;
-        
+
         [Header("INVENTORY CELL")]
         [SerializeField] private RewardInventoryCell _rewardInventoryCellPrefab;
         [SerializeField] private RectTransform _contentParent;
@@ -25,39 +18,42 @@ namespace SpinGamePanel.RewardInventory
         [SerializeField] private GameObject _exitButtonObj;
         private BaseButton _exitButton;
 
-        private Dictionary<string, RewardInventoryCell> _rewardInventoryCells;
+        private Dictionary<string, RewardInventoryCell> _rewardInventoryCells = new Dictionary<string, RewardInventoryCell>();
         
         #endregion // Variable Field
 
         private void OnValidate()
         {
-            if (_exitButton != null)
-                _exitButton.OnClick = null;
-            
             _exitButton = _exitButtonObj.GetComponent<BaseButton>();
-            _exitButton.OnClick += OnClickExitButton;
         }
         
         public override void Initialize(params object[] list)
         {
+            _exitButton = _exitButtonObj.GetComponent<BaseButton>();
+            
             base.Initialize(list);
-        
-            _rewardInventoryCells = new Dictionary<string, RewardInventoryCell>();
+        }
+
+        public override void RegisterEvents()
+        {
+            _exitButton.OnClick += OnClickExitButton;
+        }
+
+        public override void UnregisterEvents()
+        {
+            _exitButton.OnClick -= OnClickExitButton;
         }
 
         public override void End()
         {
             base.End();
-            
-            foreach (RewardInventoryCell inventoryCell in _rewardInventoryCells.Values)
-            {
-                inventoryCell.End();
-                Destroy(inventoryCell.gameObject);
-            } 
-
-            _rewardInventoryCells.Clear();
+            ClearAllRewardInventoryCell();
         }
-
+        
+        /// <summary>
+        /// Retrieves all reward data from the reward inventory cells in the inventory.
+        /// </summary>
+        /// <returns>An array containing all reward data in the inventory.</returns>
         public RewardData[] GetAllRewardDataInInventory()
         {
             List<RewardData> allRewardData = new List<RewardData>();
@@ -100,11 +96,29 @@ namespace SpinGamePanel.RewardInventory
         
             _rewardInventoryCells.Add(collectedRewardData.Sprite.name, rewardInventoryCell);
         }
-        
+
         /// <summary>
-        /// Handles the click event of the exit button. If the wheel is currently spinning, shakes the exit button
-        /// to indicate that it cannot be pressed. If the wheel is not spinning and the reward inventory is empty,
-        /// stops the spinning game. Otherwise, invokes the ClickedExitButton event.
+        /// Clears and removes all reward inventory cells from the dictionary and scene.
+        /// </summary>
+        private void ClearAllRewardInventoryCell()
+        {
+            foreach (RewardInventoryCell inventoryCell in _rewardInventoryCells.Values)
+            {
+                if(inventoryCell == null)
+                    continue;
+                
+                inventoryCell.End();
+                Destroy(inventoryCell.gameObject);
+            }
+
+            _rewardInventoryCells.Clear();
+        }
+
+        #region BUTTON LISTENERS
+
+        /// <summary>
+        /// Handles the exit button click event. Shakes the button if the wheel is spinning,
+        /// stops the game if the inventory is empty, or invokes the exit button event otherwise.
         /// </summary>
         private void OnClickExitButton()
         {
@@ -117,11 +131,16 @@ namespace SpinGamePanel.RewardInventory
             }
             
             // If the reward inventory is empty, stop the spinning game.
-            if(_rewardInventoryCells.Count == 0)
+            if (_rewardInventoryCells.Count == 0)
+            {
                 GameManager.Instance.StopSpinGame();
+                return;
+            }
             
             // If there are rewards in the inventory, invoke the ClickedExitButton event.
             SpinGameEventLib.Instance.ClickedExitButton?.Invoke();
         }
+        
+        #endregion
     }
 }

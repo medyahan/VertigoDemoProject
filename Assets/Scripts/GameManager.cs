@@ -32,7 +32,6 @@ public class GameManager : Singleton<GameManager>
     private void OnDestroy()
     {
         _mainMenuPanelManager.End();
-        _spinGamePanelManager.End();
     }
 
     public void StartSpinGame()
